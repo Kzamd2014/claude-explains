@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude Explains</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>Claude Explains</h1>
+      <p class="subtitle">Ask a question. Get a clear answer from Claude.</p>
+    </header>
+
+    <!-- Question form -->
+    <section class="ask-section">
+      <textarea
+        id="question-input"
+        placeholder="What do you want Claude to explain?"
+        rows="4"
+      ></textarea>
+
+      <button id="submit-btn">Ask Claude</button>
+    </section>
+
+    <!-- Loading indicator (hidden by default) -->
+    <div id="loading" class="hidden">
+      <span class="spinner"></span>
+      <p>Claude is thinking...</p>
+    </div>
+
+    <!-- Error message (hidden by default) -->
+    <div id="error-box" class="hidden">
+      <p id="error-message"></p>
+    </div>
+
+    <!-- Answer display (hidden by default) -->
+    <section id="answer-section" class="hidden">
+      <h2>Answer</h2>
+      <div id="answer-text"></div>
+    </section>
+
+    <!-- Community Q&A feed -->
+    <section id="feed-section">
+      <h2>Community Questions</h2>
+      <div id="feed"></div>
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
