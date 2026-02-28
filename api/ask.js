@@ -15,6 +15,11 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "A question is required." });
   }
 
+  // Catch missing env var early with a clear message
+  if (!process.env.ANTHROPIC_API_KEY) {
+    return res.status(500).json({ error: "ANTHROPIC_API_KEY is not set on the server." });
+  }
+
   try {
     // Call the Anthropic API using the server-side environment variable
     const response = await fetch("https://api.anthropic.com/v1/messages", {
